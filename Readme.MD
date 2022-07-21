@@ -1,3 +1,8 @@
+## Architecture
+
+![VPC-1-Subnet](aws-1-public-subnet.PNG)
+
+
 ## Commands
 - terraform plan
 
