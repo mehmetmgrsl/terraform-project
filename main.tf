@@ -83,18 +83,19 @@ resource "aws_key_pair" "mmg_auth" {
 
 
 resource "aws_instance" "mmg_dev_node" {
-  ami           = data.aws_ami.mmg_server_ami.id
-  instance_type = "t3.micro"
-
-  tags = {
-    Name = "dev-node"
-  }
-
+  ami                    = data.aws_ami.mmg_server_ami.id
+  instance_type          = "t3.micro"
   key_name               = aws_key_pair.mmg_auth.id
   vpc_security_group_ids = [aws_security_group.mmg_sg.id]
   subnet_id              = aws_subnet.mmg-public-subnet.id
 
+  user_data = file("userdata.tpl")
+
   root_block_device {
     volume_size = 10
+  }
+
+  tags = {
+    Name = "dev-node"
   }
 }
