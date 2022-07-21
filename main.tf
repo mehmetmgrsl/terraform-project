@@ -55,11 +55,11 @@ resource "aws_security_group" "mmg_sg" {
   vpc_id      = aws_vpc.mmg-vpc.id
 
   ingress {
-    description      = "TLS from VPC"
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
+    description = "TLS from VPC"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -79,4 +79,22 @@ resource "aws_security_group" "mmg_sg" {
 resource "aws_key_pair" "mmg_auth" {
   key_name   = "deployer-key"
   public_key = file("~/.ssh/mmgkey.pub")
+}
+
+
+resource "aws_instance" "mmg_dev_node" {
+  ami           = data.aws_ami.mmg_server_ami.id
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "dev-node"
+  }
+
+  key_name               = aws_key_pair.mmg_auth.id
+  vpc_security_group_ids = [aws_security_group.mmg_sg.id]
+  subnet_id              = aws_subnet.mmg-public-subnet.id
+
+  root_block_device {
+    volume_size = 10
+  }
 }
