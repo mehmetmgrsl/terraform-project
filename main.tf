@@ -74,3 +74,9 @@ resource "aws_security_group" "mmg_sg" {
     Name = "allow_tls"
   }
 }
+
+
+resource "aws_key_pair" "mmg_auth" {
+  key_name   = "deployer-key"
+  public_key = file("~/.ssh/mmgkey.pub")
+}
