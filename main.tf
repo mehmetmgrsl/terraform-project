@@ -47,3 +47,30 @@ resource "aws_route_table_association" "mmg-public-assoc" {
   subnet_id      = aws_subnet.mmg-public-subnet.id
   route_table_id = aws_route_table.mmg-public-rt.id
 }
+
+
+resource "aws_security_group" "mmg_sg" {
+  name        = "dev_sg"
+  description = "dev security group"
+  vpc_id      = aws_vpc.mmg-vpc.id
+
+  ingress {
+    description      = "TLS from VPC"
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags = {
+    Name = "allow_tls"
+  }
+}
