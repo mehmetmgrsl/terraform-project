@@ -1,4 +1,8 @@
-## Architecture
+## Architecture - 2
+
+![VPC-2-Subnets](aws-1-public-1-private-subnet.PNG)
+
+## Architecture - 1
 
 ![VPC-1-Subnet](aws-1-public-subnet.PNG)
 
