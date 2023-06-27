@@ -12,7 +12,7 @@ resource "aws_subnet" "mmg-public-subnet" {
   vpc_id                  = aws_vpc.mmg-vpc.id
   cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = true
-  availability_zone       = "us-east-1a"
+  availability_zone       = "eu-north-1a"
 
   tags = {
     Name = "dev-public-subnet"
@@ -99,3 +99,4 @@ resource "aws_instance" "mmg_dev_node" {
     Name = "dev-node"
   }
 }
+

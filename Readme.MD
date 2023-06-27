@@ -8,13 +8,14 @@
 
 
 ## Commands
-- terraform plan
+1. cd ~/.ssh
+ 
+   ssh-keygen -> use ```mmgkey``` as a name
 
-- terraform apply
-
-- terraform plan -destroy
-
-- terraform apply -destroy
+2. terraform plan
+3. terraform apply
+4. terraform plan -destroy
+5. terraform apply -destroy
 
 ### Resources:
 
