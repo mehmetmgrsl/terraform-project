@@ -22,6 +22,8 @@
 - sudo apt install graphviz -y
 - terraform graph | dot -Tsvg > graph.svg
 
+- terraform init -upgrade
+
 
 ### Resources:
 
