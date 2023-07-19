@@ -16,6 +16,13 @@
 - terraform show
 - sudo terraform apply --auto-approve
 
+
+- terraform show
+- terraform validate
+- sudo apt install graphviz -y
+- terraform graph | dot -Tsvg > graph.svg
+
+
 ### Resources:
 
 1. Terraform Installation - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
