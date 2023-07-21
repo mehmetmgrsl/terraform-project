@@ -1,8 +1,8 @@
 resource "aws_iam_user" "admin-user" {
-    name = "lucy"
-    tags = {
-        Description ="Tech Team Lead"
-    }
+  name = "lucy"
+  tags = {
+    Description = "Tech Team Lead"
+  }
 }
 
 resource "aws_iam_policy" "admin-policy" {

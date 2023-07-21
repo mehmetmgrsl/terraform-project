@@ -8,6 +8,7 @@
 - terraform -install-autocomplete
 
 ## Commands
+- terraform fmt
 - terraform init
 - terraform plan
 - sudo terraform apply
@@ -23,6 +24,10 @@
 - terraform graph | dot -Tsvg > graph.svg
 
 - terraform init -upgrade
+
+- terraform state mv aws_dynamodb_table.cars aws_dynamodb_table.vehicles
+- terraform state pull
+- terraform state rm ADDRESS
 
 
 ### Resources:
