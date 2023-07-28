@@ -29,6 +29,8 @@
 - terraform state pull
 - terraform state rm ADDRESS
 
+- after creating the ec2-instance -> ssh -i web-nginx ubuntu@public-ip-address
+
 
 ### Resources:
 
