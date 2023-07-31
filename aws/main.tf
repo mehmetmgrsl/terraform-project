@@ -83,6 +83,13 @@ resource "aws_instance" "webserver" {
 
   key_name = aws_key_pair.web-nginx.key_name
   vpc_security_group_ids = [aws_security_group.ssh-access.id]
+  user_data = file("./install-nginx.sh")
+}
+
+
+resource "aws_eip" "eip" {
+  vpc      = true
+  instance = aws_instance.webserver.id
 }
 
 resource "aws_key_pair" "web-nginx" {
@@ -109,6 +116,26 @@ resource "aws_security_group" "ssh-access" {
 
 output publicip {
   value = aws_instance.webserver.public_ip
+}
+
+
+
+variable "ami" {
+  default = "ami-08766f81ab52792ce"
+}
+
+variable "instance_type" {
+  default = "t3.micro"
+}
+
+resource "aws_instance" "test-ec2" {
+  ami           = var.ami
+  instance_type = var.instance_type
+
+  tags = {
+    Name = "test server"
+    Description = "t2.micro test server"
+  }   
 }
 
 
