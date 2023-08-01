@@ -31,6 +31,13 @@
 
 - after creating the ec2-instance -> ssh -i web-nginx ubuntu@public-ip-address
 
+- terraform taint [options] address
+
+//  informs Terraform that a particular object has become degraded or damaged. Terraform represents this by marking the object as "tainted" in the Terraform state, and Terraform will propose to replace it in the next plan you create
+
+- terraform untaint [options] address
+
+// If Terraform currently considers a particular object as tainted but you've determined that it's actually functioning correctly and need not be replaced, you can use terraform untaint to remove the taint marker from that object.
 
 ### Resources:
 
