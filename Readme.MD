@@ -39,6 +39,12 @@
 
 // If Terraform currently considers a particular object as tainted but you've determined that it's actually functioning correctly and need not be replaced, you can use terraform untaint to remove the taint marker from that object.
 
+- Terraform Log Levels
+   - INFO, WARNING, ERROR, DEBUG, TRACE
+   - export TF_LOG=TRACE
+   - export TF_LOG_PATH=/tmp/terraform.log
+
+
 ### Resources:
 
 1. Terraform Installation - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
