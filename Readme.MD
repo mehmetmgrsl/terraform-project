@@ -45,6 +45,14 @@
    - export TF_LOG_PATH=/tmp/terraform.log
 
 
+
+- terraform import <resource_type>.<resource_name> <attribute>  
+// Terraform can import existing infrastructure resources.
+
+- aws ec2 describe-instances // to get an instance id of ec2 instance
+
+- terraform state list // is used to list resources within a Terraform state.
+
 ### Resources:
 
 1. Terraform Installation - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
