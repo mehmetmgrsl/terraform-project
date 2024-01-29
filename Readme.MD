@@ -17,6 +17,8 @@
 - terraform show
 - sudo terraform apply --auto-approve
 
+- terraform force-unlock <LOCK-ID>   # to release the lock
+
 
 - terraform show
 - terraform validate
