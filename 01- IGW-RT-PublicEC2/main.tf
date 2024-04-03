@@ -55,7 +55,7 @@ resource "aws_security_group" "mmg_sg" {
   vpc_id      = aws_vpc.mmg-vpc.id
 
   ingress {
-    description = "TLS from VPC"
+    description = "Allow all inbound traffic from any destination"
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
@@ -63,15 +63,12 @@ resource "aws_security_group" "mmg_sg" {
   }
 
   egress {
+    description = "Allow all outbound traffic to any destination"
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
-  }
-
-  tags = {
-    Name = "allow_tls"
   }
 }
 
