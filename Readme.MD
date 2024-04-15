@@ -55,6 +55,12 @@
 
 - terraform state list // is used to list resources within a Terraform state.
 
+- Generate documentation from Terraform modules  
+
+   - terraform-docs markdown table --output-file README.md --output-mode inject /path/to/module
+
+   - https://github.com/terraform-docs/terraform-docs 
+
 ### Resources:
 
 1. Terraform Installation - https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
